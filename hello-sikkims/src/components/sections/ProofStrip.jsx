@@ -1,0 +1,5 @@
+import { Users, FileCheck2, BadgeCheck, Headphones } from "lucide-react";
+const items = [{ value: "10,000+", label: "Happy travelers served", Icon: Users }, { value: "Permit support", label: "For Nathula and North Sikkim", Icon: FileCheck2 }, { value: "TAAS affiliated", label: "Affiliation details available on request", Icon: BadgeCheck }, { value: "24/7", label: "Mountain road assistance", Icon: Headphones }];
+export default function ProofStrip() {
+  return <section className="border-y border-slate-800 bg-[#111C30] py-8"><div className="container-shell grid grid-cols-2 gap-5 md:grid-cols-4">{items.map(({value,label,Icon}) => <div key={value} className="flex gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400"><Icon size={19}/></span><div><p className="text-sm font-extrabold text-white sm:text-base">{value}</p><p className="mt-1 text-xs leading-5 text-slate-400">{label}</p></div></div>)}</div></section>;
+}

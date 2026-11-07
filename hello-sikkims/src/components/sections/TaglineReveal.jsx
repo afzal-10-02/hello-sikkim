@@ -1,0 +1,5 @@
+import { motion } from "framer-motion";
+export default function TaglineReveal() {
+  const words = "From the winding roads of Zuluk to the high altitudes of Gurudongmar Lake, we bring local Sikkimese mountain expertise, road safety and personal warmth to every kilometer of your journey.".split(" ");
+  return <section className="container-shell section-space text-center"><p className="eyebrow">The Sikkim feeling</p><motion.p initial="hidden" whileInView="visible" viewport={{ once: true, amount: .35 }} variants={{ visible: { transition: { staggerChildren: .035 } } }} className="mx-auto mt-6 max-w-5xl text-2xl font-bold leading-relaxed tracking-tight text-white sm:text-3xl lg:text-4xl">{words.map((word,i) => <motion.span key={`${word}-${i}`} variants={{ hidden: { opacity: .25, y: 8 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: .35 }} className="mr-2 inline-block">{word}</motion.span>)}</motion.p><p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-400">Travel with people who know the routes, respect the mountains and care about the details.</p></section>;
+}

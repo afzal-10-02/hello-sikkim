@@ -1,0 +1,14 @@
+import { Mountain, Phone, Mail, MessageCircle } from "lucide-react";
+import { CONTACT } from "../../data/siteData";
+import { phoneHref, whatsappHref } from "../../utils/formatters";
+
+const footerLinks = [["Cab rentals", "#cabs"], ["Tour packages", "#tours"], ["Destinations", "#destinations"], ["Permit guide", "#permits"], ["FAQs", "#faqs"]];
+
+export default function Footer() {
+  return <footer className="border-t border-slate-800 bg-[#0B1220] py-12"><div className="container-shell"><div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-4">
+    <div><a href="#home" className="inline-flex items-center gap-2 text-xl font-extrabold text-white"><Mountain className="text-emerald-400" />Hello Sikkims</a><p className="mt-4 max-w-xs text-sm leading-7 text-slate-500">Local tours, Sikkim cab rentals and travel assistance for journeys across the mountains.</p><div className="mt-5 flex gap-2"><a aria-label="Call" href={phoneHref(CONTACT.phone)} className="rounded-lg border border-slate-700 p-2.5 text-slate-400 hover:text-emerald-400"><Phone size={17} /></a><a aria-label="WhatsApp" href={whatsappHref(CONTACT.whatsapp)} className="rounded-lg border border-slate-700 p-2.5 text-slate-400 hover:text-emerald-400"><MessageCircle size={17} /></a><a aria-label="Email" href={`mailto:${CONTACT.email}`} className="rounded-lg border border-slate-700 p-2.5 text-slate-400 hover:text-emerald-400"><Mail size={17} /></a></div></div>
+    <div><h4 className="text-sm font-extrabold text-white">Explore</h4><div className="mt-4 flex flex-col gap-3">{footerLinks.map(([label, href]) => <a key={label} href={href} className="text-sm text-slate-500 hover:text-emerald-400">{label}</a>)}</div></div>
+    <div><h4 className="text-sm font-extrabold text-white">Contact</h4><div className="mt-4 space-y-3 text-sm leading-6 text-slate-500"><p>{CONTACT.address}</p><p>{CONTACT.phone}</p><p>+91 90642 56851</p><p>{CONTACT.email}</p><p>{CONTACT.secondaryEmail}</p></div></div>
+    <div><h4 className="text-sm font-extrabold text-white">Travel information</h4><div className="mt-4 flex flex-col gap-3 text-sm text-slate-500"><a href="#permits" className="hover:text-emerald-400">Sikkim permit checklist</a><a href="#cabs" className="hover:text-emerald-400">Cab tariff guide</a><a href="#faqs" className="hover:text-emerald-400">Travel FAQs</a><a href="#contact" className="hover:text-emerald-400">Privacy policy</a><a href="#contact" className="hover:text-emerald-400">Terms of service</a></div></div>
+  </div><div className="mt-10 flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-600 sm:flex-row sm:justify-between"><p>© {new Date().getFullYear()} Hello Sikkims Tours and Cab Rentals. All rights reserved.</p><p>Made for journeys across Sikkim.</p></div></div></footer>;
+}

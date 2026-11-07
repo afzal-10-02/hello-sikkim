@@ -1,0 +1,6 @@
+import { Info, MapPinned } from "lucide-react";
+import SectionHeading from "../common/SectionHeading";
+import { destinations } from "../../data/siteData";
+export default function Destinations() {
+  return <section id="destinations" className="scroll-mt-24 border-y border-slate-800 bg-[#111C30] section-space"><div className="container-shell"><SectionHeading eyebrow="Discover the regions" title="Explore destinations across Sikkim" description="From alpine lakes in the east to quiet monasteries and valleys in the west, discover what each region has to offer."/><div className="grid gap-4 sm:grid-cols-2">{destinations.map((d,i)=><article key={d.region} className="rounded-2xl border border-slate-700 bg-[#1E293B] p-5 sm:p-6"><div className="flex items-center justify-between"><span className="rounded-lg bg-emerald-500/10 px-3 py-1.5 text-xs font-extrabold text-emerald-300">0{i+1}</span><MapPinned className="text-slate-500" size={20}/></div><h3 className="mt-5 text-xl font-extrabold text-white">{d.region}</h3><p className="mt-3 text-sm leading-7 text-slate-400">{d.places}</p><div className="mt-5 flex gap-2 border-t border-slate-700 pt-4"><Info size={15} className="mt-0.5 shrink-0 text-amber-400"/><p className="text-xs leading-5 text-slate-300">{d.permit}</p></div></article>)}</div></div></section>;
+}

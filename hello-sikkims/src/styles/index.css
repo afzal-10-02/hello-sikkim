@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Manrope", sans-serif;
+  scroll-behavior: smooth;
+
+  --color-background: #102A43;
+  --color-surface: #243B53;
+  --color-card: #1B344B;
+  --color-primary: #F0B45A;
+  --color-primary-hover: #D99A3E;
+  --color-accent: #70C1D3;
+  --color-text: #F8FAFC;
+  --color-muted: #BCCCDC;
+  --color-border: #486581;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(240, 180, 90, .35);
+  color: white;
+}
+
+.container-shell {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-space {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[.2em];
+  color: var(--color-primary);
+}
+
+.section-title {
+  @apply mt-3 text-3xl font-bold tracking-tight sm:text-4xl;
+  color: var(--color-text);
+}
+
+.section-copy {
+  @apply mt-4 max-w-2xl text-sm leading-7 sm:text-base;
+  color: var(--color-muted);
+}
+
+.panel {
+  @apply rounded-2xl border p-4 sm:p-6;
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.field-label {
+  @apply mb-2 block text-xs font-semibold;
+  color: var(--color-muted);
+}
+
+.field-control {
+  @apply w-full rounded-lg border bg-[#102A43] px-3 py-3 text-sm text-white outline-none transition focus:ring-2;
+  border-color: var(--color-border);
+  --tw-ring-color: rgba(240, 180, 90, .2);
+}
+
+.field-control:focus {
+  border-color: var(--color-primary);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2;
+  background: var(--color-primary);
+  color: #102A43;
+  --tw-ring-color: var(--color-primary);
+  --tw-ring-offset-color: #102A43;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border bg-[#1B344B] px-5 py-3 text-sm font-bold text-slate-100 transition;
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
